@@ -1,13 +1,14 @@
 const colors = {
-  primary: "#333333",
-  secondary: "#efefef",
+  primary: "#efefef",
+  secondary: "#212121",
+}
+
+const fonts = {
+  title: "Oswald, sans-serif",
+  normal: "Quattrocento, serif",
 }
 
 export const theme = {
   colors,
-  font: {
-    thin: 300,
-    regular: 400,
-    bold: 800,
-  },
+  fonts,
 }

@@ -1,12 +1,58 @@
 import React from "react"
 import styled from "styled-components"
 
-const FooterWrapper = styled.footer`
-  color: ${props => props.theme.colors.secondary};
-  background: ${props => props.theme.colors.primary};
-  padding: 1.45rem;
+const StyledFooter = styled.footer`
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
 `
 
-const Footer = () => <FooterWrapper>© Filipe Estacio 2019</FooterWrapper>
+const SocialMediaList = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const SocialMediaLink = styled.a`
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: ${props => props.theme.colors.primary};
+  padding: 5px 10px;
+  border: 1px solid ${props => props.theme.colors.primary};
+  border-radius: 4px;
+
+  &:hover {
+    background: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.secondary};
+  }
+`
+
+const Copyright = styled.p`
+  display: flex;
+  align-items: center;
+  font-size: 0.66rem;
+`
+
+const Footer = () => (
+  <StyledFooter>
+    <Copyright>© Filipe Estacio, created with Gatsby</Copyright>
+    <SocialMediaList>
+      <SocialMediaLink href="https://github.com/filipeestacio">
+        Github
+      </SocialMediaLink>
+      <SocialMediaLink href="https://twitter.com/FilipeEstacio">
+        Twitter
+      </SocialMediaLink>
+      <SocialMediaLink href="https://www.linkedin.com/in/filipe-est%C3%A1cio-1b7bbb20/">
+        LinkedIn
+      </SocialMediaLink>
+    </SocialMediaList>
+  </StyledFooter>
+)
 
 export default Footer

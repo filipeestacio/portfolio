@@ -1,17 +1,84 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
-const About = () => (
-  <Layout>
-    <h3>About me</h3>
-    <p>Here I will talk about my background, my motivations and my journey</p>
-    <h4>Where to go from here?</h4>
-    <p>Web development is not the destination</p>
-    <ul>
-      <li>Study AI</li>
-      <li>Learn IoT development</li>
-    </ul>
-  </Layout>
-)
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+`
+
+const TextBox = styled.div`
+  max-width: 500px;
+`
+
+const Photo = styled(Img)`
+  width: 300px;
+  border-radius: 4px;
+  margin: 20px;
+`
+
+const StyledLink = styled(Link)`
+  color: ${props => props.theme.colors.primary};
+  text-decoration: none;
+  text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 4px #e60073, 0 0 6px #e60073,
+    0 0 7px #e60073, 0 0 8px #e60073, 0 0 9px #e60073;
+`
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "filipe.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const About = props => {
+  return (
+    <Layout>
+      <h1>About me</h1>
+      <ContentWrapper>
+        <Photo fluid={props.data.file.childImageSharp.fluid} />
+        <TextBox>
+          <p>
+            I graduated as a Civil Engineer in 2007. Since then I have worked in
+            various roles in the Water Industry both in Portugal and in the UK,
+            from data analyst to engineer to people manager and leader.
+          </p>
+          <p>
+            In 2018, feeling that I could be doing more for my chosen field I
+            have decided to learn web development. This has taken me on a path
+            of learning at a pace that I only vaguely remembered from
+            university. The feeling of being able to build my own tools and
+            seeing things grow in front of me was amazing. I was hooked.
+          </p>
+          <p>
+            <StyledLink to="/skills">
+              Having acquired working knowledge of various front-end and
+              back-end web development tools
+            </StyledLink>
+            , I am now looking for a job as a junior web developer. My goal is
+            to apply the human-centered principles of civil engineering to
+            software development.
+          </p>
+          <p>
+            <StyledLink to="/contact">Contact me!</StyledLink>
+          </p>
+        </TextBox>
+      </ContentWrapper>
+    </Layout>
+  )
+}
 
 export default About

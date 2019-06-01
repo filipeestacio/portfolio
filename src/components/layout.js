@@ -1,34 +1,66 @@
 import React from "react"
-import { GlobalStyle } from "../theme/globalStyle"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import { ThemeProvider } from "styled-components"
+import Helmet from "react-helmet"
+import { graphql, StaticQuery } from "gatsby"
+
+// import styled-components dependencies
 import styled from "styled-components"
+import { ThemeProvider } from "styled-components"
 import { theme } from "../theme/theme"
 
-const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`
+// Import components
+import Main from "./main"
+import Header from "./header"
+import Navbar from "./navbar"
+import Footer from "./footer"
 
-const Main = styled.main`
-  flex: 1;
-  padding: 1rem 1rem 1rem 1rem;
-  margin: 10px;
-  border: 1px solid black;
+const Grid = styled.div`
+  min-height: 100%;
+  background: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.primary};
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "navbar main"
+    "footer footer";
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const Layout = ({ children }) => {
+  // return JSX
   return (
-    <ThemeProvider theme={theme}>
-      <PageWrapper>
-        <GlobalStyle />
-        <Header />
-        <Main>{children}</Main>
-        <Footer />
-      </PageWrapper>
-    </ThemeProvider>
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={data => (
+        <>
+          <Helmet title={data.site.siteMetadata.title}>
+            <html lang="en" />
+          </Helmet>
+          <ThemeProvider theme={theme}>
+            <Grid>
+              <Header>{data.site.siteMetadata.title}</Header>
+              <Navbar direction="column">Navbar</Navbar>
+              <Main>{children}</Main>
+              <Footer>Footer</Footer>
+            </Grid>
+          </ThemeProvider>
+        </>
+      )}
+    />
   )
 }
 
