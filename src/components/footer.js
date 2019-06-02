@@ -5,7 +5,7 @@ const StyledFooter = styled.footer`
   grid-area: footer;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
 `
 
@@ -32,15 +32,8 @@ const SocialMediaLink = styled.a`
   }
 `
 
-const Copyright = styled.p`
-  display: flex;
-  align-items: center;
-  font-size: 0.66rem;
-`
-
 const Footer = () => (
   <StyledFooter>
-    <Copyright>© Filipe Estacio, created with Gatsby</Copyright>
     <SocialMediaList>
       <SocialMediaLink href="https://github.com/filipeestacio">
         Github

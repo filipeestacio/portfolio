@@ -37,7 +37,7 @@ const Skills = () => {
       <h1>Skills</h1>
       <SkillCards>
         {mySkills.map(mySkill => (
-          <SkillCard>{mySkill}</SkillCard>
+          <SkillCard key={mySkills.indexOf(mySkill)}>{mySkill}</SkillCard>
         ))}
       </SkillCards>
     </Layout>
