@@ -8,15 +8,22 @@ import Img from "gatsby-image"
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
   }
 `
 
 const TextBox = styled.div`
   max-width: 500px;
+  text-align: justify;
+  margin-right: 30px;
+
+  @media (max-width: 1200px) {
+    max-width: 800px;
+    margin-right: 0;
+  }
 `
 
 const Photo = styled(Img)`
@@ -28,6 +35,20 @@ const Photo = styled(Img)`
 const StyledLink = styled(Link)`
   color: ${props => props.theme.colors.primary};
   text-decoration: none;
+`
+
+const ButtonLink = styled(StyledLink)`
+  padding: 10px 14px 10px 14px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: linear-gradient(
+    135deg,
+    ${props => props.theme.colors.callToAction},
+    ${props => props.theme.colors.callToActionGradient}
+  );
+  text-align: center;
+  width: 100%;
 `
 
 export const query = graphql`
@@ -69,11 +90,18 @@ const About = props => {
             to apply the human-centered principles of civil engineering to
             software development.
           </p>
-          <p>
-            <StyledLink to="/contact">Contact me!</StyledLink>
-          </p>
         </TextBox>
-        <Photo fluid={props.data.file.childImageSharp.fluid} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyItems: "center",
+            alignItems: "center",
+          }}
+        >
+          <Photo fluid={props.data.file.childImageSharp.fluid} />
+          <ButtonLink to="/contact">Contact me!</ButtonLink>
+        </div>
       </ContentWrapper>
     </Layout>
   )

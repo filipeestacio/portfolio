@@ -4,6 +4,17 @@ import { ThemeProvider } from "styled-components"
 import { theme } from "../theme/theme"
 import Navbar from "../components/navbar"
 import { animated, useSpring } from "react-spring"
+import { graphql } from "gatsby"
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
 
 const PageWrapper = styled.div`
   display: flex;
@@ -25,10 +36,12 @@ const NameWrapper = styled(animated.div)`
 `
 
 const Title = styled(animated.h1)`
+  font-family: ${props => props.theme.fonts.title};
+  font-size: 3rem;
   font-weight: 700;
 `
 
-const SubTitle = styled.h2`
+const SubTitle = styled.h3`
   font-weight: 400;
   margin: 5%;
 `
@@ -39,7 +52,7 @@ const NavWrapper = styled.div`
   align-items: center;
 `
 
-export default () => {
+export default props => {
   const springConfig = { mass: 1, tension: 170, friction: 250 }
 
   const fade = useSpring({
@@ -57,7 +70,7 @@ export default () => {
     <ThemeProvider theme={theme}>
       <PageWrapper>
         <NameWrapper style={drawBorder}>
-          <Title style={fade}>Filipe Estacio</Title>
+          <Title style={fade}>{props.data.site.siteMetadata.title}</Title>
         </NameWrapper>
         <SubTitle>A Junior Full-Stack Developer</SubTitle>
         <NavWrapper>

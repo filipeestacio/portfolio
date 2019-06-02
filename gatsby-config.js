@@ -8,9 +8,9 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: "A Civil Engineer gone Digital",
+    title: "Filipe Estácio",
     description:
-      "Civil engineering is a professional engineering discipline that deals with the design, construction, and maintenance of the physical and naturally built environment. In the 21st century, our world expanded to embrace the digital. As a civil engineer, so have I.",
+      "Civil engineering is a professional discipline that deals with the design, construction, and maintenance of the physical and naturally built environment. In the 21st century, our world expanded to embrace the digital. As a civil engineer, so have I.",
     author: "Filipe Estacio",
     menuLinks: [
       { id: 1, name: "Home", link: "/" },

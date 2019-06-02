@@ -21,7 +21,7 @@ const Projects = () => {
       name: "StockBar",
       description: `Building a mobile app to facilitate the stock management in a local hospital by using the camera on a mobile phone to read from and write to a database. 
         The staff needs to juggle an extraordinary number of responsibilities and this will be 
-        developed to be as quick an unobtrusive as possible. Full tech stack not yet defined but should use React-Native to develop for mobile platforms.`,
+        developed to be as quick and unobtrusive as possible. Full tech stack not yet defined but should use React-Native to develop for mobile platforms.`,
       color: "dodgerblue",
     },
     {

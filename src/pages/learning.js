@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const Learning = () => {
   return (
     <Layout>
-      <h1>Learning never stops</h1>
+      <h1>Learning</h1>
     </Layout>
   )
 }

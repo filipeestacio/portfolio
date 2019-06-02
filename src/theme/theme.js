@@ -1,6 +1,8 @@
 const colors = {
   primary: "#efefef",
   secondary: "#212121",
+  callToAction: "#66b2b2",
+  callToActionGradient: "#006666",
 }
 
 const fonts = {

@@ -4,6 +4,7 @@ import styled from "styled-components"
 const StyledLogo = styled.div``
 
 const TitleText = styled.div`
+  font-family: ${props => props.theme.fonts.title};
   font-size: 2.5rem;
   text-align: center;
 `
