@@ -4,8 +4,8 @@ const colors = {
 }
 
 const fonts = {
-  title: "Oswald, sans-serif",
-  normal: "Quattrocento, serif",
+  title: "Amatic SC",
+  normal: "Roboto",
 }
 
 export const theme = {

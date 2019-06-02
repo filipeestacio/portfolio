@@ -38,9 +38,8 @@ module.exports = {
       resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {
         fonts: [
-          { family: "Oswald", subsets: ["latin"] },
-          { family: "Montserrat", variants: ["400"] },
-          { family: "Amatic SC", subsets: ["latin"], variants: ["400"] },
+          { family: "Roboto", variants: ["300", "400", "700"] },
+          { family: "Amatic SC", subsets: ["latin"], variants: ["400", "700"] },
         ],
       },
     },

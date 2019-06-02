@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: 700px) {
     flex-direction: column;
@@ -28,8 +28,6 @@ const Photo = styled(Img)`
 const StyledLink = styled(Link)`
   color: ${props => props.theme.colors.primary};
   text-decoration: none;
-  text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 4px #e60073, 0 0 6px #e60073,
-    0 0 7px #e60073, 0 0 8px #e60073, 0 0 9px #e60073;
 `
 
 export const query = graphql`
@@ -49,7 +47,6 @@ const About = props => {
     <Layout>
       <h1>About me</h1>
       <ContentWrapper>
-        <Photo fluid={props.data.file.childImageSharp.fluid} />
         <TextBox>
           <p>
             I graduated as a Civil Engineer in 2007. Since then I have worked in
@@ -76,6 +73,7 @@ const About = props => {
             <StyledLink to="/contact">Contact me!</StyledLink>
           </p>
         </TextBox>
+        <Photo fluid={props.data.file.childImageSharp.fluid} />
       </ContentWrapper>
     </Layout>
   )

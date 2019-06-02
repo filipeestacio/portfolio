@@ -25,6 +25,10 @@ const StyledLink = styled(Link)`
   width: 80px;
   text-align: center;
 
+  @media (max-width: 700px) {
+    font-weight: 700;
+  }
+
   &:not(.active):hover {
     background: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.secondary};
@@ -46,6 +50,7 @@ const StyledLink = styled(Link)`
     background: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.secondary};
     transform: scale(1.1, 1.3);
+    font-weight: 700;
   }
 `
 
