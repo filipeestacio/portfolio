@@ -5,9 +5,10 @@ import styled from "styled-components"
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
   justify-items: flex-end;
   align-items: flex-end;
+  margin: 20px;
 `
 const Label = styled.label`
   border: 0;
