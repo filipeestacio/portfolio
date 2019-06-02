@@ -14,19 +14,21 @@ const Card = styled(animated.div)`
   display: flex;
   height: 200px;
   width: 100%;
+  padding: 20px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   will-change: transform, opacity;
   border-radius: 4px;
-  background: ${props => props.inputcolor || "green"};
+  background: ${props => props.inputcolor};
 `
 
-const FrontCard = styled(Card)``
+const FrontCard = styled(Card)`
+  font-weight: 700;
+`
 
 const BackCard = styled(Card)`
   filter: hue-rotate(45deg);
-  padding: 20px;
   font-size: 14px;
 `
 
