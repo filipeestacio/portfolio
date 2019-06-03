@@ -73,6 +73,7 @@ const Button = styled.button`
 `
 
 const Contact = () => {
+  const [success, setSuccess] = useState(false)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
@@ -91,7 +92,13 @@ const Contact = () => {
       method: "POST",
       body: formData,
     })
-      .then(response => console.log("Success!!", response))
+      .then(response => {
+        console.log("Success!!", response)
+        setName("")
+        setEmail("")
+        setMessage("")
+        setSuccess(true)
+      })
       .catch(error => console.log("Error!!", error.message))
   }
 
@@ -99,41 +106,45 @@ const Contact = () => {
     <Layout>
       <h1>Contact me</h1>
       <p>Do you have a question or would like to work with me?</p>
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor="name">Name </Label>
-        <Input
-          type="text"
-          name="name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          placeholder="Name"
-          required
-        />
+      {success ? (
+        <p>Thanks for reaching out!</p>
+      ) : (
+        <Form onSubmit={handleSubmit}>
+          <Label htmlFor="name">Name </Label>
+          <Input
+            type="text"
+            name="name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            placeholder="Name"
+            required
+          />
 
-        <Label htmlFor="email">Email:</Label>
-        <Input
-          type="email"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
+          <Label htmlFor="email">Email:</Label>
+          <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
 
-        <Label htmlFor="message">Message:</Label>
-        <TextArea
-          type="text"
-          name="message"
-          value={message}
-          onChange={e => setMessage(e.target.value)}
-          placeholder="Your message"
-          required
-        />
+          <Label htmlFor="message">Message:</Label>
+          <TextArea
+            type="text"
+            name="message"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+            placeholder="Your message"
+            required
+          />
 
-        <Button type="submit" value="Submit">
-          Send
-        </Button>
-      </Form>
+          <Button type="submit" value="Submit">
+            Send
+          </Button>
+        </Form>
+      )}
     </Layout>
   )
 }
