@@ -49,6 +49,12 @@ const ButtonLink = styled(StyledLink)`
   );
   text-align: center;
   width: 100%;
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 5px 5px 5px 0px black;
+    transition: all 0.6s ease;
+    z-index: 100;
+  }
 `
 
 export const query = graphql`

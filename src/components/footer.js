@@ -5,7 +5,7 @@ const StyledFooter = styled.footer`
   grid-area: footer;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 20px;
 `
 

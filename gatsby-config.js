@@ -15,11 +15,23 @@ module.exports = {
     menuLinks: [
       { id: 1, name: "Home", link: "/" },
       { id: 2, name: "About", link: "/about" },
-      { id: 3, name: "Skills", link: "/skills" },
-      { id: 4, name: "Learning", link: "/learning" },
+      { id: 3, name: "What I do", link: "/skills" },
       { id: 5, name: "Projects", link: "/projects" },
-      { id: 6, name: "Where to?", link: "/development" },
-      { id: 7, name: "Contact", link: "/contact" },
+      { id: 6, name: "Contact", link: "/contact" },
+    ],
+    skills: [
+      { id: 1, name: "CSS", image: "css" },
+      { id: 2, name: "HTML", image: "html" },
+      { id: 3, name: "JavaScript", image: "javascript" },
+      { id: 4, name: "React", image: "react" },
+      { id: 5, name: "GraphQL", image: "graphql" },
+      { id: 6, name: "Styled Components", image: "styledcomponents" },
+      { id: 7, name: "Gatsby", image: "gatsby" },
+      { id: 8, name: "React-Spring", image: "reactspring" },
+      { id: 9, name: "NodeJS", image: "nodeJS" },
+      { id: 10, name: "ExpressJS", image: "express" },
+      { id: 11, name: "Git", image: "github" },
+      { id: 12, name: "MongoDB", image: "mongodb" },
     ],
   },
   plugins: [
@@ -41,14 +53,6 @@ module.exports = {
           { family: "Roboto", variants: ["300", "400", "700"] },
           { family: "Amatic SC", subsets: ["latin"], variants: ["400", "700"] },
         ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /assets/,
-        },
       },
     },
   ],

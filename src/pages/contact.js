@@ -22,8 +22,8 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
-  background-color: transparent;
-  color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.secondary};
   height: 1.5rem;
   border: 2px solid ${props => props.theme.colors.primary};
   border-radius: 10px;
@@ -36,8 +36,8 @@ const Input = styled.input`
 `
 
 const TextArea = styled.textarea`
-  background-color: transparent;
-  color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.secondary};
   height: 250px;
   width: 100%;
   border: 2px solid ${props => props.theme.colors.primary};
@@ -64,6 +64,12 @@ const Button = styled.button`
   text-align: center;
   width: 100px;
   border: 0px;
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 5px 5px 5px 0px black;
+    transition: all 0.6s ease;
+    z-index: 100;
+  }
 `
 
 const Contact = () => {
