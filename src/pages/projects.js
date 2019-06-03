@@ -42,10 +42,11 @@ const Projects = () => {
     },
     {
       id: 5,
-      name:"Portolio",
-      description: "This website was built with Gatsby, but not yet making the most of what a JAM stack can do (Javascript And Markup). In the near future I will add my own blog as well as well as introduce several code optimisations and new features",
-      color: "orangered"
-    }
+      name: "Portfolio",
+      description:
+        "This website was built with Gatsby, but not yet making the most of what a JAM stack can do (Javascript And Markup). In the near future I will add my own blog as well as well as introduce several code optimisations and new features",
+      color: "orangered",
+    },
   ]
 
   return (
