@@ -49,6 +49,9 @@ const Layout = ({ children }) => {
         <>
           <Helmet title={data.site.siteMetadata.title}>
             <html lang="en" />
+            <meta charSet="utf-8" />
+            <title>{data.site.siteMetadata.title}</title>
+            <link rel="canonical" href="https://filipeestacio.github.io/" />
           </Helmet>
           <ThemeProvider theme={theme}>
             <Grid>

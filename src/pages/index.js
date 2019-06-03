@@ -5,6 +5,7 @@ import { theme } from "../theme/theme"
 import Navbar from "../components/navbar"
 import { animated, useSpring } from "react-spring"
 import { graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 export const query = graphql`
   query {
@@ -67,16 +68,24 @@ export default props => {
   })
 
   return (
-    <ThemeProvider theme={theme}>
-      <PageWrapper>
-        <NameWrapper style={drawBorder}>
-          <Title style={fade}>{props.data.site.siteMetadata.title}</Title>
-        </NameWrapper>
-        <SubTitle>A Junior Full-Stack Developer</SubTitle>
-        <NavWrapper>
-          <Navbar style={{ flexDirection: "row" }} />
-        </NavWrapper>
-      </PageWrapper>
-    </ThemeProvider>
+    <>
+      <Helmet title={props.data.site.siteMetadata.title}>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <title>{props.data.site.siteMetadata.title}</title>
+        <link rel="canonical" href="https://filipeestacio.github.io/" />
+      </Helmet>
+      <ThemeProvider theme={theme}>
+        <PageWrapper>
+          <NameWrapper style={drawBorder}>
+            <Title style={fade}>{props.data.site.siteMetadata.title}</Title>
+          </NameWrapper>
+          <SubTitle>A Junior Full-Stack Developer</SubTitle>
+          <NavWrapper>
+            <Navbar style={{ flexDirection: "row" }} />
+          </NavWrapper>
+        </PageWrapper>
+      </ThemeProvider>
+    </>
   )
 }
