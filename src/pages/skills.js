@@ -8,12 +8,14 @@ import Img from "gatsby-image"
 const ScrollWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `
 
 const SkillCard = styled.div`
-  background: ${props => props.theme.colors.primary};
-  color: ${props => props.theme.colors.secondary};
+  background: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.primary};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -22,7 +24,7 @@ const SkillCard = styled.div`
   width: 150px;
   margin: 5px;
   border-radius: 5px;
-  border: 1px solid ${props => props.theme.colors.primary};
+  border: 2px solid ${props => props.theme.colors.primary};
   &:hover {
     transform: scale(1.2);
     border: 1px solid black;
@@ -52,7 +54,7 @@ const StyledA = styled.a`
     transition: all 0.6s ease;
     z-index: 100;
   }
-` 
+`
 
 const StyledImg = styled(Img)`
   height: auto;
@@ -118,10 +120,17 @@ const Skills = () => {
       </ScrollWrapper>
       <br />
       <div>
-        <p>This website is open source, so you can see under the hood into my work.</p>
-        <p>Whenever possible I will work on optimising the code and adding new
-        demonstrations of my know-how.</p>
-        <StyledA href="https://github.com/filipeestacio/portfolio">Go to source</StyledA>
+        <p>
+          This website is open source, so you can see under the hood into my
+          work.
+        </p>
+        <p>
+          Whenever possible I will work on optimising the code and adding new
+          demonstrations of my know-how.
+        </p>
+        <StyledA href="https://github.com/filipeestacio/portfolio">
+          Go to source
+        </StyledA>
       </div>
     </Layout>
   )
