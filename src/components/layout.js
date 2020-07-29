@@ -9,9 +9,9 @@ import { theme } from "../theme/theme"
 
 // Import components
 import Main from "./main"
-import Header from "./header"
-import Navbar from "./navbar"
-import Footer from "./footer"
+import Header from "./Header"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 const Grid = styled.div`
   min-height: 100%;

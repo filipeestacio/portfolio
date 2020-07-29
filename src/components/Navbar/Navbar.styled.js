@@ -1,6 +1,5 @@
-import React from "react"
-import { graphql, StaticQuery, Link } from "gatsby"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const StyledNav = styled.nav`
   grid-area: navbar;
@@ -54,35 +53,4 @@ const StyledLink = styled(Link)`
   }
 `
 
-const Navbar = ({ direction }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            menuLinks {
-              id
-              name
-              link
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <StyledNav direction={direction}>
-        {data.site.siteMetadata.menuLinks.map(menuLink => (
-          <StyledLink
-            to={menuLink.link}
-            key={menuLink.id}
-            activeClassName="active"
-          >
-            {menuLink.name}
-          </StyledLink>
-        ))}
-      </StyledNav>
-    )}
-  />
-)
-
-export default Navbar
+export { StyledNav, StyledLink }
