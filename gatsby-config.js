@@ -6,6 +6,10 @@
 
 const path = require("path")
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Filipe Estácio",
@@ -53,6 +57,20 @@ module.exports = {
           { family: "Roboto", variants: ["300", "400", "700"] },
           { family: "Amatic SC", subsets: ["latin"], variants: ["400", "700"] },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "GITHUB",
+        // This is the field under which it's accessible
+        fieldName: "github",
+        // URL to query from
+        url: "https://api.github.com/graphql",
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
       },
     },
   ],

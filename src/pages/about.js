@@ -90,11 +90,11 @@ const About = props => {
           <p>
             <StyledLink to="/skills">
               Having acquired working knowledge of various front-end and
-              back-end web development tools
+              back-end software development tools
             </StyledLink>
-            , I am now looking for a job as a junior web developer. My goal is
-            to apply the human-centered principles of civil engineering to
-            software development.
+            , I am now looking for a job as a software developer. My goal is to
+            apply the human-centered principles of civil engineering to software
+            development.
           </p>
         </TextBox>
         <div
