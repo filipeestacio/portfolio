@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 
-const Projects = () => {
+const Repos = () => {
   const data = useStaticQuery(graphql`
     query {
       github {
@@ -37,4 +37,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Repos

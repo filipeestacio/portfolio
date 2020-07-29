@@ -20,7 +20,7 @@ module.exports = {
       { id: 1, name: "Home", link: "/" },
       { id: 2, name: "About", link: "/about" },
       { id: 3, name: "What I do", link: "/skills" },
-      { id: 5, name: "Projects", link: "/projects" },
+      { id: 5, name: "Repos", link: "/repos" },
       { id: 6, name: "Contact", link: "/contact" },
     ],
     skills: [
