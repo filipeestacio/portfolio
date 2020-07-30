@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 
 const StyledLogo = styled.div``
@@ -14,11 +13,4 @@ const SubTitleText = styled.div`
   text-align: center;
 `
 
-const Logo = () => (
-  <StyledLogo>
-    <TitleText>Filipe Estácio</TitleText>
-    <SubTitleText>A Civil Engineer gone Digital</SubTitleText>
-  </StyledLogo>
-)
-
-export default Logo
+export { StyledLogo, TitleText, SubTitleText }

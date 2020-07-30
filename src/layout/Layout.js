@@ -3,34 +3,15 @@ import Helmet from "react-helmet"
 import { graphql, StaticQuery } from "gatsby"
 
 // import styled-components dependencies
-import styled from "styled-components"
 import { ThemeProvider } from "styled-components"
 import { theme } from "../theme/theme"
 
 // Import components
-import Main from "./main"
+import { Grid } from "./Layout.styled"
+import Main from "./Main"
 import Header from "./Header"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-
-const Grid = styled.div`
-  min-height: 100%;
-  background: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.primary};
-  display: grid;
-
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "header header"
-    "navbar main"
-    "footer footer";
-
-  @media (max-width: 700px) {
-    display: flex;
-    flex-direction: column;
-  }
-`
 
 const Layout = ({ children }) => {
   // return JSX

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
+import Layout from "../layout"
 import styled from "styled-components"
 
 const Form = styled.form`
