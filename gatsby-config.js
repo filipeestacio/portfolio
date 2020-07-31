@@ -21,7 +21,8 @@ module.exports = {
       { id: 2, name: "About", link: "/about" },
       { id: 3, name: "What I do", link: "/skills" },
       { id: 5, name: "Repos", link: "/repos" },
-      { id: 6, name: "Contact", link: "/contact" },
+      { id: 6, name: "Social Media", link: "/socialmedia" },
+      { id: 7, name: "Contact", link: "/contact" },
     ],
     skills: [
       { id: 1, name: "CSS", image: "css" },
