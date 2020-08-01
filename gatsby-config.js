@@ -86,7 +86,7 @@ module.exports = {
           myTweets: {
             endpoint: "statuses/user_timeline",
             params: {
-              user_id: process.env.TWITTER_MY_USER_ID,
+              user_id: process.env.TWITTER_USER_ID,
               include_rts: false,
               exclude_replies: true,
               tweet_mode: "extended",

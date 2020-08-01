@@ -4,7 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 // import styled-components dependencies
 import { ThemeProvider } from "styled-components"
-import { theme } from "../theme/theme"
+import { theme } from "../../theme/theme"
 
 // Import components
 import { Grid } from "./Layout.styled"

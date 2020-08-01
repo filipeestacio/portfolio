@@ -1,5 +1,6 @@
 import React from "react"
-import Layout from "../layout"
+import Layout from "../components/Layout"
+import Gallery from "../components/Gallery"
 import { graphql, useStaticQuery } from "gatsby"
 
 const SocialMedia = () => {
@@ -12,13 +13,6 @@ const SocialMedia = () => {
           }
         }
       }
-      allInstaNode {
-        grams: edges {
-          gram: node {
-            id
-          }
-        }
-      }
     }
   `)
 
@@ -28,6 +22,7 @@ const SocialMedia = () => {
       {JSON.stringify(data)}
       <h2>Twitter</h2>
       <h2>Instagram</h2>
+      <Gallery />
     </Layout>
   )
 }
