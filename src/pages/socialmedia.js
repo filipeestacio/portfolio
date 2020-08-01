@@ -12,13 +12,22 @@ const SocialMedia = () => {
           }
         }
       }
+      allInstaNode {
+        grams: edges {
+          gram: node {
+            id
+          }
+        }
+      }
     }
   `)
 
   return (
     <Layout>
       <h1>Social Media</h1>
-      <p>{JSON.stringify(data)}</p>
+      {JSON.stringify(data)}
+      <h2>Twitter</h2>
+      <h2>Instagram</h2>
     </Layout>
   )
 }

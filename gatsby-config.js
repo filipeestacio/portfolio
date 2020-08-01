@@ -96,6 +96,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: process.env.INSTAGRAM_USER_ID,
+      },
+    },
   ],
 }
 
