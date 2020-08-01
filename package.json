@@ -25,6 +25,7 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-source-graphql": "^2.6.2",
+    "gatsby-source-twitter": "^3.2.2",
     "gatsby-transformer-sharp": "^2.5.11",
     "lodash": "^4.17.19",
     "prop-types": "^15.7.2",

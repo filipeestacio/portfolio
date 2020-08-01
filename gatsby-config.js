@@ -74,6 +74,28 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: process.env.TWITTER_API_KEY,
+          consumer_secret: process.env.TWITTER_API_SECRET,
+          bearer_token: process.env.TWITTER_BEARER_TOKEN,
+        },
+        queries: {
+          myTweets: {
+            endpoint: "statuses/user_timeline",
+            params: {
+              user_id: process.env.TWITTER_MY_USER_ID,
+              include_rts: false,
+              exclude_replies: true,
+              tweet_mode: "extended",
+              count: 10,
+            },
+          },
+        },
+      },
+    },
   ],
 }
 
