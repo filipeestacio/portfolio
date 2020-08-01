@@ -4,9 +4,11 @@ import { StyledGallery } from "./Gallery.styled"
 import Image from "../Image"
 
 const Gallery = () => {
+  // TODO: make the limit and the size of the images into variables?
+
   const data = useStaticQuery(graphql`
     query {
-      allInstaNode {
+      allInstaNode(limit: 8) {
         grams: edges {
           gram: node {
             id
@@ -22,12 +24,17 @@ const Gallery = () => {
       }
     }
   `)
+
   return (
     <div>
       <StyledGallery>
         {data.allInstaNode.grams.map((item, i) => {
           return item.gram.localFile ? (
-            <Image fluid={item.gram.localFile.childImageSharp.fluid} key={i} />
+            <Image
+              fluid={item.gram.localFile.childImageSharp.fluid}
+              size="400"
+              key={i}
+            />
           ) : (
             <div>Nothing to show</div>
           )
