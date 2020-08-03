@@ -8,7 +8,7 @@ const Gallery = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allInstaNode(limit: 8) {
+      allInstaNode(limit: 8, filter: { mediaType: { eq: "GraphImage" } }) {
         grams: edges {
           gram: node {
             id
