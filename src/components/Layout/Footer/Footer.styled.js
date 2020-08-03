@@ -23,7 +23,7 @@ const SocialMediaLink = styled.a`
   color: ${props => props.theme.colors.primary};
   padding: 5px 10px;
   border: 1px solid ${props => props.theme.colors.primary};
-  border-radius: 4px;
+  border-radius: 10px;
 
   &:hover {
     background: ${props => props.theme.colors.primary};

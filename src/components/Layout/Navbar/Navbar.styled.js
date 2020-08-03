@@ -10,8 +10,17 @@ const StyledNav = styled.nav`
   font-family: "Amatic SC";
 
   @media (max-width: 700px) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    justify-items: space-between;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
   }
 `
 

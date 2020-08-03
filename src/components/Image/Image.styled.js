@@ -3,12 +3,10 @@ import Img from "gatsby-image"
 
 const ImageWrapper = styled.div`
   position: relative;
-  max-width: 400px;
 `
 const StyledImage = styled(Img)`
   position: absolute;
   z-index: 1;
-  width: 400px;
 `
 
 const Caption = styled.p`
@@ -21,12 +19,22 @@ const Caption = styled.p`
   height: 100%;
   color: white;
   background: rgba(0, 0, 0, 0.8);
-  border: 1px solid black;
-  line-height: 2rem;
+  font-size: 1vw;
+  line-height: 1.5vw;
 
   display: flex;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 1200px) {
+    font-size: 1.8vw;
+    line-height: 2.6vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 5vw;
+    line-height: 7.5vw;
+  }
 `
 
 export { ImageWrapper, StyledImage, Caption }

@@ -105,7 +105,7 @@ const Contact = () => {
   return (
     <Layout>
       <h1>Contact me</h1>
-      <p>Do you have a question or would like to work with me?</p>
+      <p>I'd love to chat!</p>
       {success ? (
         <p>Thanks for reaching out!</p>
       ) : (
