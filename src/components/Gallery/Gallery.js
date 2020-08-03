@@ -12,6 +12,7 @@ const Gallery = () => {
         grams: edges {
           gram: node {
             id
+            caption
             localFile {
               childImageSharp {
                 fluid(maxWidth: 400, maxHeight: 400) {
@@ -34,6 +35,7 @@ const Gallery = () => {
               fluid={item.gram.localFile.childImageSharp.fluid}
               size="400"
               key={i}
+              caption={item.gram.caption}
             />
           ) : (
             <div>Nothing to show</div>
