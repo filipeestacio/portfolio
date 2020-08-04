@@ -6,7 +6,11 @@ ghpages.publish(
     branch: "master",
     repo: "https://github.com/filipeestacio/filipeestacio.github.io.git",
   },
-  () => {
-    console.log("Deployment complete")
+  error => {
+    if (error) {
+      console.log(error)
+    } else {
+      console.log("Deployment complete")
+    }
   }
 )

@@ -34,7 +34,7 @@ const Repo = ({
         setToggle(!toggle)
       }}
     >
-      <Title>{name.replaceAll("-", " ")}</Title>
+      <Title>{name}</Title>
       <Description>{description}</Description>
       <LogoWrapper>
         <a href={url} target="_blank" rel="noreferrer">
