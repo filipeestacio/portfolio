@@ -24,6 +24,18 @@ const Text = styled.div`
   padding: 20px;
 `
 
+const Emphasis = styled.p`
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-align: right;
+  padding-right: 150px;
+
+  @media (max-width: 1280px) {
+    padding-right: 0px;
+  }
+`
+
 export const query = graphql`
   query {
     file(relativePath: { eq: "filipe.jpg" }) {
@@ -44,36 +56,57 @@ const About = props => {
         <Photo fluid={props.data.file.childImageSharp.fluid} />
       </ImageCropper>
       <Text>
+        <Emphasis>I started out as a Civil Engineer.</Emphasis>
         <p>
-          Veniam soluta aut et provident. Neque exercitationem corrupti nam ex
-          quis beatae ut ea. Necessitatibus debitis necessitatibus maiores
-          aliquid dolore. Sapiente error dolor recusandae impedit a quaerat
-          aliquam. Et itaque dolor non quidem minima quos rem inventore. Natus
-          hic rerum qui facere in sit.
+          From very early on I have used code to solve problems, both during my
+          studies and my early professional life. Civil Engineers design, build
+          and maintain the foundations for our modern society. Usually this
+          means our roads and bridges, drinking water, energy systems and
+          infrastructure for a cleaner environment. We are responsible for
+          understanding the needs of the civilian community and engineer answers
+          to them.
         </p>
+        <Emphasis>But what if this also meant our digital world?</Emphasis>
         <p>
-          Veniam soluta aut et provident. Neque exercitationem corrupti nam ex
-          quis beatae ut ea. Necessitatibus debitis necessitatibus maiores
-          aliquid dolore. Sapiente error dolor recusandae impedit a quaerat
-          aliquam. Et itaque dolor non quidem minima quos rem inventore. Natus
-          hic rerum qui facere in sit.
+          <a
+            href="https://www.wsj.com/articles/every-company-is-now-a-tech-company-1543901207"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Every company is a tech company
+          </a>
+          . More than ever the web is how we interact with the world. And beyond
+          our favourite device is an overwhelming amount of digital
+          infrastructure to hold it all together. Our interfaces are getting
+          slicker. But are our applications providing the best solutions to our
+          problems?
         </p>
+        <Emphasis>Are we sure we know what our problems are?</Emphasis>
         <p>
-          Veniam soluta aut et provident. Neque exercitationem corrupti nam ex
-          quis beatae ut ea. Necessitatibus debitis necessitatibus maiores
-          aliquid dolore. Sapiente error dolor recusandae impedit a quaerat
-          aliquam. Et itaque dolor non quidem minima quos rem inventore. Natus
-          hic rerum qui facere in sit.
+          Slicker. Faster. More flexible. It needs to do everything. Synergy.
+          Whichever last buzzword you've heard at a meeting. These are all
+          things we think or have thought we wanted in an application when we
+          are conceptualising it. And it usually falls short. This happens
+          because the designer or software developer didn't fully understand the
+          problem you are trying to solve or the client hasn't been able to
+          articulate it properly. Most of the time it's a bit of column A and a
+          bit of column B.
+        </p>
+        <Emphasis>I am a problem solver at heart. I fix things.</Emphasis>
+        <p>
+          No real world problem is too big to be tackled. If it seems that way,
+          we just haven't broken it down to solvable pieces just yet. I've been
+          doing this for years. I want to keep doing it.
         </p>
       </Text>
       <h3>Looking for</h3>
       <p>
-        Ut officiis excepturi accusamus ipsam consequuntur. Qui at officiis
-        asperiores earum est quas. Omnis itaque quia nostrum distinctio
-        voluptates voluptates. Culpa unde itaque rerum dolorum ea. Nisi
-        architecto sed eum ad.
+        I'm looking for contract work or a full-time opportunity as a junior
+        software developer. I'm also always on the lookout for good ideas and
+        would love to join a startup working in something I strongly believe in.
       </p>
-      <Link to="/contact">Contact me!</Link>
+
+      <Link to="/contact">Get in touch! Let's grab a cup of coffee.</Link>
     </Layout>
   )
 }
