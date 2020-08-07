@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master",
-    "deploy:github": "npm run build && node ./scripts/deploy-github"
+    "deploy:github": "gatsby clean && npm run build && node ./scripts/deploy-github"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
