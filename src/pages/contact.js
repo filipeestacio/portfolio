@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
+import { PaperPlane } from "../components/svg/PaperPlane"
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  justify-items: flex-end;
-  align-items: flex-end;
+  justify-items: center;
+  align-items: center;
   margin: 20px;
 `
 const Label = styled.label`
@@ -51,100 +52,59 @@ const TextArea = styled.textarea`
 `
 
 const Button = styled.button`
+  height: 100px;
   padding: 10px 14px 10px 14px;
-  border-radius: 4px;
+  border: none;
   font-size: 0.875rem;
   font-weight: 400;
   color: ${props => props.theme.colors.primary};
-  background: linear-gradient(
-    135deg,
-    ${props => props.theme.colors.callToAction},
-    ${props => props.theme.colors.callToActionGradient}
-  );
   text-align: center;
-  width: 100px;
-  border: 0px;
-  &:hover {
-    transform: scale(1.2);
-    box-shadow: 5px 5px 5px 0px black;
-    transition: all 0.6s ease;
-    z-index: 100;
-  }
 `
 
 const Contact = () => {
-  const [success, setSuccess] = useState(false)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
-
-  const handleSubmit = event => {
-    event.preventDefault()
-
-    let formData = new FormData()
-    formData.append("name", name)
-    formData.append("email", email)
-    formData.append("message", message)
-
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzFnOcV8qU9IafsHmcqJ0qHxFt2OagbrdhqguOiPxaXkEf0phs/exec"
-    fetch(scriptURL, {
-      method: "POST",
-      body: formData,
-    })
-      .then(response => {
-        console.log("Success!!", response)
-        setName("")
-        setEmail("")
-        setMessage("")
-        setSuccess(true)
-      })
-      .catch(error => console.log("Error!!", error.message))
-  }
 
   return (
     <Layout>
       <h1>Contact me</h1>
       <p>I'd love to chat!</p>
-      {success ? (
-        <p>Thanks for reaching out!</p>
-      ) : (
-        <Form onSubmit={handleSubmit}>
-          <Label htmlFor="name">Name </Label>
-          <Input
-            type="text"
-            name="name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            placeholder="Name"
-            required
-          />
 
-          <Label htmlFor="email">Email:</Label>
-          <Input
-            type="email"
-            name="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
+      <Form action={process.env.GETFORMS_ENDPOINT} method="POST">
+        <Label htmlFor="name">Name</Label>
+        <Input
+          type="text"
+          name="name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          placeholder="Name"
+          required
+        />
 
-          <Label htmlFor="message">Message:</Label>
-          <TextArea
-            type="text"
-            name="message"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-            placeholder="Your message"
-            required
-          />
+        <Label htmlFor="email">Email</Label>
+        <Input
+          type="email"
+          name="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
 
-          <Button type="submit" value="Submit">
-            Send
-          </Button>
-        </Form>
-      )}
+        <Label htmlFor="message">Message:</Label>
+        <TextArea
+          type="text"
+          name="message"
+          value={message}
+          onChange={e => setMessage(e.target.value)}
+          placeholder="Your message"
+          required
+        />
+        <Button type="submit" value="Submit">
+          <PaperPlane />
+        </Button>
+      </Form>
     </Layout>
   )
 }
