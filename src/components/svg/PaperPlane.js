@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
+import { Button } from "../../pages/contact"
 
 const paperPlaneScoping = keyframes`
   0% {
@@ -30,7 +31,7 @@ const paperPlaneSoaring = keyframes`
 const StyledSVG = styled.svg`
   width: auto;
   height: 100%;
-  &:hover {
+  ${Button}:hover & {
     animation-timing-function: linear;
     animation: ${paperPlaneSoaring} 3s forwards infinite;
   }
@@ -38,7 +39,7 @@ const StyledSVG = styled.svg`
 
 const StyledPlane = styled.div`
   height: 100%;
-  &:hover {
+  ${Button}:hover & {
     animation-timing-function: ease-in-out;
     animation: ${paperPlaneScoping} 1.5s alternate infinite;
   }
